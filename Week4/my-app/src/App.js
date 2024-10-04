@@ -1,21 +1,21 @@
-import logo from './logo.svg';
+import PassengerTicket from './PassengerTicket';
 import './App.css';
 
-function Lol() {
-  let name = 'Drew';
-
+function Lol(props) {
   return (
-    <p>Hello from me. My name is {name}</p>
+    <div>
+      <p>Hello from me. My name is {props.name}!</p>
+      <p>I live in {props.city}.</p>
+    </div>
   )
 }
 
-
-
 function App() {
   return (
-      <div>
+      <div class="container">
         <h1>Hello World!</h1>
-        <Lol />
+        <Lol name="Drew" city="Vancouver"/>
+        <PassengerTicket name="Drew" destination="Hawaii" greeting="Dr" seat="44A"/>
       </div>
   );
 }
