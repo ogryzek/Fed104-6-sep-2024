@@ -1,30 +1,41 @@
+function Square({ value }) {
+    function handleClick() {
+        console.log("I'm doing something!!!");
+    }
 
-function Square() {
+    return (
+        <button 
+            className="square"
+            onClick={handleClick}
+        >{value}</button>
+    )
+}
+
+function Board() {
     return (
         <div>
             <div className="board-row">
-                <button className="square">1</button>
-                <button className="square">2</button>
-                <button className="square">3</button>
+                <Square value="1" />
+                <Square value="2" />
+                <Square value="3" />
             </div>
             <div className="board-row">
-                <button className="square">4</button>
-                <button className="square">5</button>
-                <button className="square">6</button>
+                <Square />
+                <Square />
+                <Square />
             </div>
             <div className="board-row">
-                <button className="square">7</button>
-                <button className="square">8</button>
-                <button className="square">9</button>
+                <Square />
+                <Square />
+                <Square />
             </div>
         </div>
     )
 }
 
-
 function TicTacToe() {
     return (
-        <Square />
+        <Board />
     )
 }
 
