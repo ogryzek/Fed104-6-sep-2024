@@ -77,4 +77,4 @@ Create a UserProvider component that wraps a UserDisplay component.
 Inside it show user’s data.  
 
 ![Ex 11 - user context example](./exercise11.png)
-
+  
