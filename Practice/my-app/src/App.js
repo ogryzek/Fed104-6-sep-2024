@@ -2,6 +2,7 @@ import PassengerTicket from './PassengerTicket';
 import {Lol, Counter} from './week4';
 import { MyMessage, SecondCounter, Menu, Exercise06 } from './week5';
 import { Home, Profile, Login, Navbar } from './exercise16'
+import { Routes, Route } from 'react-router-dom';
 
 import TicTacToe from './practice';
 import './App.css';
@@ -23,10 +24,12 @@ function Week4() {
 function Exercise16() {
   return (
     <div className="exercise16">
-      <Home />
-      <Profile />
-      <Login />
       <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
     </div>
   )
 }
@@ -40,7 +43,6 @@ function Week5 () {
       <MyMessage />
       <Exercise16 />
     </div>
-
   )
 }
 
