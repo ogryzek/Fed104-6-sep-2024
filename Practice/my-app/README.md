@@ -115,3 +115,37 @@ In this exercise, you’ll build a simple website using React Router.
   3. Use React Router to create routes for each of the components. The Home component should be the default route.
   4. The Login component will contain inputs of username and password.  
    
+## Exercise 18 Instructions  
+  
+Here's an uncontrolled component example of a form: 
+
+```js
+const emailRef = useRef();
+const handleSubmit = event => alert(emailRef.current.value);
+
+return <form onSubmit={handleSubmit}>
+    Email:
+    <input type="email" ref={emailRef} />
+    <button type="submit">Submit</button>
+</form>;
+```
+and a controlled component form example:  
+  
+```js
+const [email,setEmail] = useState('');
+const handleSubmit = () => alert(email);
+
+return <form onSubmit={handleSubmit}>
+    Email:
+    <input type="email" value={email}
+        onChange={(e) => setEmail(e.target.value)}/>
+    <button type="submit">Submit</button>
+</form>;
+```
+  
+Create a form to order a hamburger with the fields matching the screenshot:  
+  
+![Order a hamburger form](./public/exercise18.png)  
+
+  - Validate there are no empty fields when the form is submitted.  
+  - If there nothing missing, display an alert with the order details. Otherwise display an alert that there are empty fields.
