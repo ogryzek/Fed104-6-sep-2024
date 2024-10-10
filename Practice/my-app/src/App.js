@@ -1,6 +1,8 @@
 import PassengerTicket from './PassengerTicket';
 import {Lol, Counter} from './week4';
-import { Menu, Exercise06 } from './week5';
+import { MyMessage, SecondCounter, Menu, Exercise06 } from './week5';
+import { Home, Profile, Login, Navbar } from './exercise16'
+
 import TicTacToe from './practice';
 import './App.css';
 
@@ -18,10 +20,25 @@ function Week4() {
   );
 }
 
+function Exercise16() {
+  return (
+    <div className="exercise16">
+      <Home />
+      <Profile />
+      <Login />
+      <Navbar />
+    </div>
+  )
+}
+
 function Week5 () {
   return (
     <div className="week5-exercises">
       <Exercise06 />
+      <Menu />
+      <SecondCounter />
+      <MyMessage />
+      <Exercise16 />
     </div>
 
   )
@@ -30,10 +47,8 @@ function Week5 () {
 function App() {
   return (
     <div className="container">
-      <Menu />
-      {/* {false ? <Week4 /> : <Week5 />} */}
+      {false ? <Week4 /> : <Week5 />}
     </div>
-
   )
 }
 

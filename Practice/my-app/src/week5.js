@@ -1,3 +1,4 @@
+import {useState, useEffect} from 'react';
 
 export function Exercise06() {
     const user = {
@@ -27,4 +28,35 @@ export function Menu() {
         ))}
         </ul>
     );
+}
+
+export function MyMessage() {
+    const messages = ['Hello', 'Hey', 'Hi', "What's up?", 'Yo'];
+    const [message, setMessage] = useState(messages[0]);
+
+    useEffect(()=>{
+        setInterval(() => {
+            let randIndex = Math.floor(Math.random() * messages.length);
+            setMessage(messages[randIndex])
+        }, 1500);
+    }, []);
+
+    return (
+        <h2>The Message: {message}</h2>
+    )
+}
+
+export function SecondCounter() {
+    const [seconds, setSeconds] = useState(0);
+    useEffect(() => {
+        const intervalId = setInterval(() =>{
+            setSeconds(seconds + 1);
+        }, 1000);
+
+        return () => clearInterval(intervalId);
+    }, [seconds]);
+
+    return (
+        <h1>Counter: {seconds}</h1>
+    )
 }

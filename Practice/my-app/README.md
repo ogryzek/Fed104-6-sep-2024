@@ -71,3 +71,47 @@ function App() {
   );
 }
 ```
+
+## React Router  
+  
+  - [React Router](https://reactrouter.com/)  
+    
+To use react router, just `npm install react-router-dom` and make sure to import it into your app!  
+  
+```sh
+npm install react-router-dom
+```
+
+Wrap the `<App />` component in your `index.js` with `<BrowserRouter></BrowserRouter>` tags like so:  
+  
+```js
+//... 
+import { BrowserRouter } from 'react-router-dom';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>
+);
+```
+**NOTE**: The docs show this a little differently (BONUS: experiment with both. What is different?)
+
+```js
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>
+);
+```
+
+## Exercise 16 Instructions  
+  
+In this exercise, you’ll build a simple website using React Router.  
+  1. Create three components: Home, Profile, and Login. Each component should render some simple content, such as a heading and a paragraph.
+  2. Create a Navbar component that displays links to the Home, Login and Profile components.
+  3. Use React Router to create routes for each of the components. The Home component should be the default route.
+  4. The Login component will contain inputs of username and password.  
+   
