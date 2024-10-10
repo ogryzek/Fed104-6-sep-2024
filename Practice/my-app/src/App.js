@@ -1,6 +1,6 @@
 import PassengerTicket from './PassengerTicket';
 import {Lol, Counter} from './week4';
-import { Exercise06 } from './week5';
+import { Menu, Exercise06 } from './week5';
 import TicTacToe from './practice';
 import './App.css';
 
@@ -20,15 +20,20 @@ function Week4() {
 
 function Week5 () {
   return (
-    <Exercise06 />
+    <div className="week5-exercises">
+      <Exercise06 />
+    </div>
+
   )
 }
 
 function App() {
   return (
     <div className="container">
-      {false ? <Week4 /> : <Week5 />}
+      <Menu />
+      {/* {false ? <Week4 /> : <Week5 />} */}
     </div>
+
   )
 }
 

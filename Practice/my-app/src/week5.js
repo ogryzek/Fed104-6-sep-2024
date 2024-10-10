@@ -17,3 +17,14 @@ export function Exercise06() {
         </div>
     )
 }
+
+export function Menu() {
+    const users =  [{ name: 'John Doe', age: 35 }, { name: 'Jane Smith', age: 40 }]
+    
+    return (
+        <ul>{users.map((user, i) => (
+            <li key={i}>{user.name} - {user.age}</li>
+        ))}
+        </ul>
+    );
+}
