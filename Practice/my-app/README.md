@@ -107,6 +107,44 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 );
 ```
 
+## Exercise 11  
+  
+Create a new React context using the `createContext` function. This will be the User Context. In the User Context, define an initial user object with the properties name, email, and age.
+
+Create a `UserProvider` component that wraps a `UserDisplay` component that displays the user's data.  
+  
+```js
+import { createContext } from 'react';
+const UserContext = createContext();
+
+
+function UserDisplay() {
+  const user = useContext(UserContext);
+
+  return (
+    <div className="exercise11">
+      <h2>{user.name}</h2>
+      <p>Email: {user.email}</p>
+      <p>Age: {user.age}</p>
+    </div>
+  )
+}
+
+function UserProvider() {
+  initialUserState = {
+    name: 'Donny',
+    email: 'donny@example.com',
+    age: 53
+  }
+
+  return (
+    <UserContext.Provider value={initialUserState}>
+      <UserDisplay />
+    </UserContex.Provider>
+  )
+}
+```
+
 ## Exercise 16 Instructions  
   
 In this exercise, you’ll build a simple website using React Router.  

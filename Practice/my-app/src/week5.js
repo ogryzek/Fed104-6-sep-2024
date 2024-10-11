@@ -1,4 +1,6 @@
-import {useState, useEffect} from 'react';
+import {useContext, createContext, useState, useEffect} from 'react';
+
+const UserContext = createContext();
 
 export function Exercise06() {
     const user = {
@@ -38,7 +40,7 @@ export function MyMessage() {
         setInterval(() => {
             let randIndex = Math.floor(Math.random() * messages.length);
             setMessage(messages[randIndex])
-        }, 1500);
+        }, 2000);
     }, []);
 
     return (
@@ -58,5 +60,50 @@ export function SecondCounter() {
 
     return (
         <h1>Counter: {seconds}</h1>
+    )
+}
+
+export function MySecondCounter() {
+    const [seconds, setSeconds] = useState(0);
+    
+    useEffect(() =>{
+        const intervalId = setInterval(() => {
+            setSeconds(seconds - 1);
+        }, 250);
+
+        return(() => {
+            clearInterval(intervalId)
+        });
+
+    }, [seconds]);
+
+    return (
+        <p1>Count: {seconds}</p1>
+    )
+}
+
+function UserDisplay() {
+    const user = useContext(UserContext)
+    
+    return (
+        <div>
+            <h2>Name: {user.name}</h2>
+            <p>Email: {user.email}</p>
+            <p>Age: {user.age}</p>
+        </div>
+    )
+}
+
+export function Exercise11() {
+    const user = {
+        name: 'Joe',
+        email: 'joe@example.com',
+        age: 27
+    }
+
+    return (
+        <UserContext.Provider value={user}>
+            <UserDisplay />
+        </UserContext.Provider>
     )
 }

@@ -1,6 +1,6 @@
 import PassengerTicket from './PassengerTicket';
 import {Lol, Counter} from './week4';
-import { MyMessage, SecondCounter, Menu, Exercise06 } from './week5';
+import { Exercise11, MyMessage, MySecondCounter, SecondCounter, Menu, Exercise06 } from './week5';
 import { Home, Profile, Login, Navbar } from './exercise16'
 import { Routes, Route } from 'react-router-dom';
 
@@ -38,10 +38,19 @@ function Week5 () {
   return (
     <div className="week5-exercises">
       <Exercise06 />
+      <hr />
       <Menu />
+      <hr />
       <SecondCounter />
+      <hr />
       <MyMessage />
+      <hr />
+      <Exercise11 />
+      <hr />
       <Exercise16 />
+      <hr />
+      <h2>My Second Counter</h2>
+      <MySecondCounter />
     </div>
   )
 }
