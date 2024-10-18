@@ -1,6 +1,6 @@
 import PassengerTicket from './PassengerTicket';
 import {Lol, Counter} from './week4';
-import { Exercise11, MyMessage, MySecondCounter, SecondCounter, Menu, Exercise06 } from './week5';
+import { UpdateUser, Exercise11, MyMessage, MySecondCounter, SecondCounter, Menu, Exercise06 } from './week5';
 import { Home, Profile, Login, Navbar } from './exercise16'
 import { Routes, Route } from 'react-router-dom';
 
@@ -51,6 +51,8 @@ function Week5 () {
       <hr />
       <h2>My Second Counter</h2>
       <MySecondCounter />
+      <hr />
+      <UpdateUser />
     </div>
   )
 }

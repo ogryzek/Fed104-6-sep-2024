@@ -145,6 +145,47 @@ function UserProvider() {
 }
 ```
 
+## Exercise 12
+
+Create a new component called `EditUser`. The component allows the user to update their information with input fields for name, email and age.  
+  
+```js
+function EditUser() {
+  const user = useContext(UserContext)
+
+  return (
+    <div className="edit-user">
+      <h2>User Data</h2>
+      <input type="text" name="name" value={user.name}
+        onChange={(e) => setName(e.target.value)}
+        placeholder="Name"
+      />
+      <input type="email" name="email" value={user.email}
+        onChange={(e) => setName(e.target.value)}
+        placeholder="Email"
+      />
+      <input type="number" name="age" value={user.age}
+        onChange={(e) => setName(e.target.value)}
+        placeholder="Age"
+      />
+    </div>
+  )
+}
+
+function UpdateUser() {
+  const [name, setName] = useState("Sally");
+  const [age, setAge] = useState(23);
+  const [email, setEmail] = useState("sally@example.com");
+
+  return(
+    <UserContext.Provider value={{name, setName, age, setAge, email, setEmail}}>
+      <UserDisplay />
+      <EditUser />
+    </UserContext.Provider>
+  )
+}
+```
+
 ## Exercise 16 Instructions  
   
 In this exercise, you’ll build a simple website using React Router.  

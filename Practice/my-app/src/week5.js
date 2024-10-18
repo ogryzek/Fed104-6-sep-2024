@@ -1,6 +1,7 @@
-import {useContext, createContext, useState, useEffect} from 'react';
-
-const UserContext = createContext();
+import { useState, useEffect } from 'react';
+import { UserDisplay } from './user/userDisplay';
+import { UserContext } from './user/userContext';
+import { EditUser } from './user/editUser';
 
 export function Exercise06() {
     const user = {
@@ -78,19 +79,7 @@ export function MySecondCounter() {
     }, [seconds]);
 
     return (
-        <p1>Count: {seconds}</p1>
-    )
-}
-
-function UserDisplay() {
-    const user = useContext(UserContext)
-    
-    return (
-        <div>
-            <h2>Name: {user.name}</h2>
-            <p>Email: {user.email}</p>
-            <p>Age: {user.age}</p>
-        </div>
+        <p>Count: {seconds}</p>
     )
 }
 
@@ -104,6 +93,19 @@ export function Exercise11() {
     return (
         <UserContext.Provider value={user}>
             <UserDisplay />
+        </UserContext.Provider>
+    )
+}
+
+export function UpdateUser() {
+    const [name, setName] = useState("Sally");
+    const [age, setAge] = useState(23);
+    const [email, setEmail] = useState("sally@example.com");
+
+    return(
+        <UserContext.Provider value={{ name, setName, age, setAge, email, setEmail }}>
+            <UserDisplay />
+            <EditUser />
         </UserContext.Provider>
     )
 }
